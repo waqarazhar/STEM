@@ -58,25 +58,19 @@ if __name__ == "__main__":
             print(" Please Wait ! Cars are on the road")
 
             # Add a sleep for 5 sec
-            sleep(5)
             
             # Turn the red led ON for trafic
-            GPIO.output(LED_GREEN, 0)
-            GPIO.output(LED_RED, 1)
+            
 
             # Wiat for 5 sec
-            sleep(5)
 
             # Turn the yellow led ON for pedistrians     
-            GPIO.output(LED_YELLOW, 1)
             print(" Please cross the road ")
 
             # Wiat for 10 sec
-            sleep(10)
             print(" Please stop crossing the road ")
 
             # Turn the yellow led OFF for pedistrians        
-            GPIO.output(LED_YELLOW, 0)
 
         else: 
             #print("right button is pressed")     

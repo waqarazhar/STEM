@@ -55,10 +55,12 @@ if __name__ == "__main__":
     while(1):
             
         if(leftButton.readStable() == 1): 
-            #print("left button is pressed")     
-            reapeatBlink(LED_RED, 1, 5)
+            print("blinking red LED ")
+            # blink red LED using reapeatBlink function
+            
 
         elif(rightButton.readStable() == 1): 
-            #print("right button is pressed")     
-            reapeatBlink(LED_GREEN, 1, 5)
+            print("blinking green LED")
+            # blink green LED using reapeatBlink function     
+            
 

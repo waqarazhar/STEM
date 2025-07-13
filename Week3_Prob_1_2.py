@@ -11,8 +11,9 @@ LED_GREEN = 22
 
 def initilizePi():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(LED_GREEN, GPIO.OUT)
+    GPIO.setup(LED_YELLOW, GPIO.OUT)
     GPIO.setup(LED_RED, GPIO.OUT)
+    GPIO.setup(LED_GREEN, GPIO.OUT)
 
 def printUsage():
     print("Select the direction that you want to turn ")
@@ -21,10 +22,7 @@ def printUsage():
     
 # You have to complete this function
 def blink(LED_NUMBER, DELAY):
-    GPIO.output(LED_NUMBER, 1)
-    sleep(DELAY)
-    GPIO.output(LED_NUMBER, 0)
-    sleep(DELAY)
+    pass
 
 
 # You have to complete this function
@@ -48,19 +46,15 @@ if __name__ == "__main__":
         key = key.lower()
 
         if(key == "left"): 
-            print("Blining RED LED ")     
-            # blink red LED on left
-            blink(LED_RED, 1)
-            blink(LED_RED, 1)
-            blink(LED_RED, 1)
+            print("Blinking RED LED ")     
+            # blink red LED 3 times
+            
             printUsage()
 
         elif( key == "right" ):
-            print("Turning GREEN LED")     
-            # blink red LED on left
-            blink(LED_GREEN, 1)
-            blink(LED_GREEN, 1)
-            blink(LED_GREEN, 1)
+            print("Blinking GREEN LED")     
+            # blink red LED 3 times
+            
             printUsage()
 
         elif( key == "exit" ):

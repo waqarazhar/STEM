@@ -31,7 +31,8 @@ def blink(LED_NUMBER, DELAY):
 def reapeatBlink(LED_NUMBER, DELAY, COUNT):
     for x in range(0, COUNT):
         # Add blink function here
-        blink(LED_NUMBER, DELAY)                    
+        pass
+                           
 
 if __name__ == "__main__":
 
@@ -50,15 +51,15 @@ if __name__ == "__main__":
         key = key.lower()
 
         if(key == "left"): 
-            print("Blining RED LED ")     
-            # blink red LED on left
-            reapeatBlink(LED_RED, 1, 5)
+            print("Blinking RED LED ")     
+            # blink red LED using reapeatBlink function
+
             printUsage()
 
         elif( key == "right" ):
-            print("Turning GREEN LED")     
-            # blink red LED on left
-            reapeatBlink(LED_GREEN, 1, 5)
+            print("Blinking GREEN LED")     
+            # blink green LED using reapeatBlink function
+            
             printUsage()
 
         elif( key == "exit" ):

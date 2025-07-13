@@ -32,6 +32,7 @@ class button():
                 pass
             print(self.name , "is pressed")
             self.state = input
+            time.sleep(0.1)
             return 1
         else:
             self.state = input

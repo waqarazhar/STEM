@@ -47,17 +47,13 @@ if __name__ == "__main__":
         if(key == "on"): 
             print("Turning LED ON")     
             # Write code to turn RED, GREEN, YELLOW LED ON
-            GPIO.output(LED_RED, 1)
-            GPIO.output(LED_GREEN, 1)
-            GPIO.output(LED_YELLOW, 1)
+            
             printUsage()
 
         elif( key == "off" ):
             print("Turning LED OFF")     
             # Write code to turn RED, GREEN, YELLOW LED ON
-            GPIO.output(LED_RED, 0)
-            GPIO.output(LED_GREEN, 0)
-            GPIO.output(LED_YELLOW, 0)
+            
             printUsage()
 
         elif( key == "exit" ):
