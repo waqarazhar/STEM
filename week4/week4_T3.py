@@ -1,11 +1,11 @@
 # Import necessary libraries
 import time 
 import sys
-import tm1637
 import signal  # Used for timer functionality
 
 # Add custom module path
-sys.path.append('./base/')
+sys.path.append('/home/rpi/STEM/base/')
+
 # Import custom modules for 7-segment display and button handling
 import disp7Seg
 import button
