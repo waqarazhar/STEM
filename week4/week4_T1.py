@@ -1,64 +1,88 @@
 import time 
 import sys
 import tm1637
-import sys
 
 sys.path.append('./base/')
 import disp7Seg
 import button
 
 def printUsage():
-    print("\t Increment --> press + and enter ")
-    print("\t Decrement --> press - and enter ")
-    print("\t Exit --> type 'exit' and enter ")
+    """Print instructions for the interactive counter"""
+    print("\n=== 7-Segment Counter Controls ===")
+    print("Increment counter: Press '+' and ENTER")
+    print("Decrement counter: Press '-' and ENTER")
+    print("Reset counter:     Press '0' and ENTER")
+    print("Exit program:      Type 'exit' and ENTER")
 
 if __name__ == "__main__":
-    # Exercise 1: Initialize the 7-segment display
-    # The display uses GPIO pins 3 (CLK) and 2 (DIO)
-    # TODO: Create the display object by completing the line below
-    tm = disp7Seg.disp7Seg(clk=3, dio=2)
+    # -------------------------------------------------------------------
+    # EXERCISE 1: HARDWARE SETUP
+    # Complete the display initialization below
+    # HINT: The display uses GPIO pin 3 for CLK and pin 2 for DIO
+    # -------------------------------------------------------------------
+    tm = disp7Seg.disp7Seg(clk=____, dio=____)
     
-    time.sleep(2)  # Give the display time to initialize
+    # Wait for display to initialize
+    time.sleep(2)  
 
-    printUsage()  # Show instructions
+    # Show instructions
+    printUsage()  
 
-    count = 0  # This will store our current count
-    tm.write(count)  # Show initial count (0) on display
+    # Start counting from 0
+    count = 0  
+    tm.write(count)  # Display initial value
 
-    while(1):
-        # Exercise 2: Get user input
-        # TODO: What does this line do? Write your answer as a comment:
-        # This line _______________________________
-        key = input()
-        key = key.lower()  # Convert to lowercase
+    while True:
+        # -------------------------------------------------------------------
+        # EXERCISE 2: USER INPUT HANDLING
+        # What does the input() function do?
+        # Write your answer below:
+        # ANSWER: This line _______________________________
+        # -------------------------------------------------------------------
+        key = input("Enter command: ")
+        key = key.lower()  # Convert to lowercase for case-insensitive comparison
 
+        # -------------------------------------------------------------------
+        # EXERCISE 3: COUNTER CONTROLS
+        # Complete the missing parts for each control:
+        # -------------------------------------------------------------------
         if(key == "+"): 
-            print("Incrementing Counter ")     
-            # Exercise 3: Increment the counter
-            # TODO: Add 1 to the count variable
-            count = count + 1 
-            tm.write(count)  # Update display
-            time.sleep(0.5)  # Small delay
+            print("Incrementing Counter")     
+            # TODO: Add 1 to the count
+            count = ____
+            tm.write(count)
+            time.sleep(0.3)  # Small delay for display stability
 
         elif(key == "-"):
-            print("Decrementing Counter ")     
-            # Exercise 4: Decrement the counter
-            # TODO: Subtract 1 from the count variable
-            count = count - 1
-            tm.write(count)  # Update display
-            time.sleep(0.5)  # Small delay
+            print("Decrementing Counter")     
+            # TODO: Subtract 1 from the count
+            count = ____
+            tm.write(count)
+            time.sleep(0.3)
+
+        elif(key == "0"):
+            print("Resetting Counter")
+            # TODO: Implement reset functionality
+            count = ____
+            tm.write(____)
+            time.sleep(0.5)
 
         elif(key == "exit"):
             print("Goodbye! The program is closing.")
-            exit(1)    
+            exit(0)    
         else:
-            print("Invalid Key")
+            print("Invalid command!")
             printUsage()
 
-        # Exercise 5 (Bonus): Add a new feature!
-        # TODO: Can you add another command that does something special?
-        # For example, maybe pressing "c" could reset the counter to zero
-        # elif(key == "c"):
-        #     count = 0
-        #     tm.write(count)
-        #     print("Counter reset!")
+        # -------------------------------------------------------------------
+        # EXERCISE 4 (BONUS): ADD YOUR OWN FEATURE!
+        # Can you add another command? Some ideas:
+        # - Double increment (press '++')
+        # - Set specific value (press '5' to go to 5)
+        # - Blink the display
+        # 
+        # TODO: Uncomment and complete this section
+        # elif(key == ____):
+        #     print("Special feature activated!")
+        #     [Your code here]
+        # -------------------------------------------------------------------
