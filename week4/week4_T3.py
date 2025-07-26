@@ -74,23 +74,23 @@ if __name__ == "__main__":
 
     # Main program loop
     while True:
-        # --- EXERCISE: REARRANGE THESE CODE SNIPPETS ---
-        # (Remove these comments and place the snippets below in correct order)
+        # [EXERCISE 1: START/STOP BUTTON]
+        # HINT: Check if start button is pressed (use readStable())
+        if __________ == 1:
+            # HINT: Add small delay to prevent button bouncing
+            __________.sleep(0.2)
+            
+            # [EXERCISE 2: TOGGLE TIMER]
+            # HINT: If watch is stopped, start it. Else, stop it.
+            if watch.__________ == False:
+                print("START")
+                watch.__________()
+            else:
+                print("STOP")
+                watch.__________()
         
-        # [1] Start/Stop Button Logic:
-        # if start.readStable() == 1:
-        #     time.sleep(0.2)  # Button debounce delay
-        #     if not watch.runStatus():  # If stopped
-        #         print("START")
-        #         watch.start()
-        #     else:  # If running
-        #         print("STOP")
-        #         watch.stop()
-        #
-        # [2] Reset Button Logic:
-        # elif reset.readStable() == 1:
-        #     print("RESET")
-        #     watch.reset()
-        
-        # --- PLACE CODE SNIPPETS ABOVE HERE ---
-        pass  # Remove this after placing the snippets
+        # [EXERCISE 3: RESET BUTTON]
+        # HINT: Check reset button separately (use elif)
+        __________ reset.readStable() == 1:
+            print("RESET")
+            watch.__________()
