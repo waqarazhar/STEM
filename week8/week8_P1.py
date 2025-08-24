@@ -108,8 +108,6 @@ if __name__ == '__main__':
 			
 			printUsage()
 			key = mykey.get()
-			#print(key)
-			key = 1
 			if key == "w": 
 				ref_rpm = ref_rpm + 1
 
